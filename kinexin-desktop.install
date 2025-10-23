@@ -5,5 +5,6 @@ post_install()
 	sudo cp -rf /etc/skel/.* $HOME
 	sudo chown $DESKTOP_USER $HOME/.config -R
 	sudo systemctl disable gdm 2>/dev/null || true
+	sudo systemctl disable lightdm 2>/dev/null || true
   	sudo systemctl enable sddm
 }
