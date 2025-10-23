@@ -1,0 +1,161 @@
+# Translation of plasma flex hub into Chinese (Simplified)
+# Copyright (C) 2025
+# This file is distributed under the same license as the plasma flex hub package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma flex hub\n"
+"Report-Msgid-Bugs-To: https://github.com/zayronxio/Plasma.Flex.Hub/\n"
+"POT-Creation-Date: 2025-06-01 16:59-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Chinese <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Activate"
+msgstr "激活"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Save Theme"
+msgstr "保存主题"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Network Usage"
+msgstr "网络使用情况"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Ram Usage"
+msgstr "内存使用情况"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Network"
+msgstr "网络"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Name: "
+msgstr "名称："
+
+#: ../contents/ui/TextConstants.qml
+msgid "Force Quit"
+msgstr "强制退出"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Quit"
+msgstr "退出"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Cancel"
+msgstr "取消"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Network Connections"
+msgstr "网络连接"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Pair Device…"
+msgstr "配对设备…"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Bluetooth"
+msgstr "蓝牙"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Browse Files"
+msgstr "浏览文件"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Send File"
+msgstr "发送文件"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Copy"
+msgstr "复制"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Grid width"
+msgstr "网格宽度"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Grid Height"
+msgstr "网格高度"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Download missing album covers"
+msgstr "下载缺失的专辑封面"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Shadow Opacity"
+msgstr "阴影不透明度"
+
+#: ../contents/ui/TextConstants.qml
+msgid "controls Color"
+msgstr "控件颜色"
+
+#: ../contents/ui/TextConstants.qml
+msgid "It is not recommended to use Custom Color, in favor of the overall design."
+msgstr "不建议使用自定义颜色，以保持整体设计一致性。"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Custom Color"
+msgstr "自定义颜色"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Seleccted Global Theme's"
+msgstr "选择的全局主题"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Dark"
+msgstr "深色"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Light"
+msgstr "浅色"
+
+#: ../contents/ui/TextConstants.qml
+msgid "My sensor isn't listed"
+msgstr "我的传感器未显示"
+
+#: ../contents/ui/TextConstants.qml
+msgid "System indicator"
+msgstr "系统指示器"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Temperature"
+msgstr "温度"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Usage percentage"
+msgstr "使用百分比"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Save"
+msgstr "保存"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Volume"
+msgstr "音量"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Brightness"
+msgstr "亮度"
+
+#: ../contents/ui/TextConstants.qml
+msgid "DND"
+msgstr "勿扰模式"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Battery"
+msgstr "电池"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Screenshot"
+msgstr "截屏"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Edit Controls"
+msgstr "编辑控件"

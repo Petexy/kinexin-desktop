@@ -1,0 +1,161 @@
+# Translation of plasma flex hub into French
+# Copyright (C) 2025
+# This file is distributed under the same license as the plasma flex hub package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma flex hub\n"
+"Report-Msgid-Bugs-To: https://github.com/zayronxio/Plasma.Flex.Hub/\n"
+"POT-Creation-Date: 2025-06-01 16:59-0300\n"
+"PO-Revision-Date: 2025-07-20 00:00+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French <fr@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Activate"
+msgstr "Activer"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Save Theme"
+msgstr "Enregistrer le thème"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Network Usage"
+msgstr "Utilisation du réseau"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Ram Usage"
+msgstr "Utilisation de la RAM"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Network"
+msgstr "Réseau"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Name: "
+msgstr "Nom : "
+
+#: ../contents/ui/TextConstants.qml
+msgid "Force Quit"
+msgstr "Forcer à quitter"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Quit"
+msgstr "Quitter"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Cancel"
+msgstr "Annuler"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Network Connections"
+msgstr "Connexions réseau"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Pair Device…"
+msgstr "Appairer un appareil…"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Browse Files"
+msgstr "Parcourir les fichiers"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Send File"
+msgstr "Envoyer un fichier"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Copy"
+msgstr "Copier"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Grid width"
+msgstr "Largeur de la grille"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Grid Height"
+msgstr "Hauteur de la grille"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Download missing album covers"
+msgstr "Télécharger les pochettes d’album manquantes"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Shadow Opacity"
+msgstr "Opacité de l’ombre"
+
+#: ../contents/ui/TextConstants.qml
+msgid "controls Color"
+msgstr "Couleur des contrôles"
+
+#: ../contents/ui/TextConstants.qml
+msgid "It is not recommended to use Custom Color, in favor of the overall design."
+msgstr "Il n’est pas recommandé d’utiliser une couleur personnalisée, afin de préserver le design global."
+
+#: ../contents/ui/TextConstants.qml
+msgid "Custom Color"
+msgstr "Couleur personnalisée"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Seleccted Global Theme's"
+msgstr "Thèmes globaux sélectionnés"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Dark"
+msgstr "Sombre"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Light"
+msgstr "Clair"
+
+#: ../contents/ui/TextConstants.qml
+msgid "My sensor isn't listed"
+msgstr "Mon capteur ne figure pas dans la liste"
+
+#: ../contents/ui/TextConstants.qml
+msgid "System indicator"
+msgstr "Indicateur système"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Temperature"
+msgstr "Température"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Usage percentage"
+msgstr "Pourcentage d’utilisation"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Save"
+msgstr "Enregistrer"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Volume"
+msgstr "Volume"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Brightness"
+msgstr "Luminosité"
+
+#: ../contents/ui/TextConstants.qml
+msgid "DND"
+msgstr "Ne pas déranger"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Battery"
+msgstr "Batterie"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Screenshot"
+msgstr "Capture d’écran"
+
+#: ../contents/ui/TextConstants.qml
+msgid "Edit Controls"
+msgstr "Modifier les contrôles"

@@ -1,0 +1,8 @@
+[PlacesPanel]
+IconSize=22
+
+[General]
+TerminalPanel=false
+
+[MainWindow]
+MenuBar=Disabled
