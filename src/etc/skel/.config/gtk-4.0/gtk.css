@@ -6,6 +6,9 @@
  * Use blur my shell extension to add blur effect behind the transparent part of windows
 */
 
+@define-color accent_bg_color #9141ac; /* purple */
+@define-color accent_color #dc8add; /* light purple */
+
 window > windowhandle,
 window > headerbar.titlebar,
 window > windowhandle > headerbar.titlebar,
