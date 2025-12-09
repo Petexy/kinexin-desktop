@@ -1,10 +1,10 @@
 # Maintainer: Petexy <https://github.com/Petexy>
 
 pkgname=kinexin-desktop
-pkgver=0.1.0.r
+pkgver=1.0.0.r
 pkgrel=1
 _currentdate=$(date +"%Y-%m-%d%H-%M-%S")
-pkgdesc='An updater for Arch-based distros. One button updates system packages and Flatpaks at once'
+pkgdesc='Linexin KDE Plasma Desktop Full Experience'
 url='https://github.com/Petexy'
 arch=(x86_64)
 license=('GPL-3.0')

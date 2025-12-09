@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = plasma-desktop
+
+[Action]
+Description = Running Kinexin script after plasma-desktop update...
+When = PostTransaction
+Exec = /usr/bin/plasma-desktop-postupdate.sh

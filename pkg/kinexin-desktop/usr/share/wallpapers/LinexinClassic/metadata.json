@@ -1,0 +1,13 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "piotr.petexiness@proton.me",
+                "Name": "Linexy"
+            }
+        ],
+        "Id": "LinexinClassic",
+        "License": "CC BY-NC-SA 3.0",
+        "Name": "LinexinClassic"
+    }
+}

@@ -1,0 +1,149 @@
+# Translation of commandoutput in nl_NL
+# Copyright (C) 2019
+# This file is distributed under the same license as the commandoutput package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: commandoutput\n"
+"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-commandoutput\n"
+"POT-Creation-Date: 2024-03-12 16:30-0400\n"
+"PO-Revision-Date: 2024-03-14 10:27+0100\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
+"Language-Team: Dutch <vistausss@outlook.com>\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#: ../metadata.json
+msgid "Command Output"
+msgstr "Opdrachtuitvoer"
+
+#: ../metadata.json
+msgid "Run a command periodically and render its output."
+msgstr "Voer een opdracht periodiek uit en toon de uitvoer ervan."
+
+#: ../contents/config/config.qml ../contents/ui/config/ConfigCommand.qml
+msgid "Command"
+msgstr "Opdracht"
+
+#: ../contents/config/config.qml
+msgid "Appearance"
+msgstr "Vormgeving"
+
+#: ../contents/config/config.qml
+msgid "Actions"
+msgstr "Acties"
+
+#: ../contents/ui/config/ConfigActions.qml
+msgid "Tooltip"
+msgstr "Hulpballon"
+
+#: ../contents/ui/config/ConfigActions.qml
+msgid "Hover Command:"
+msgstr "Opdracht na aanwijzen:"
+
+#: ../contents/ui/config/ConfigActions.qml
+msgid "Click"
+msgstr "Klikken"
+
+#: ../contents/ui/config/ConfigActions.qml
+msgid "Run Command:"
+msgstr "Opdracht uitvoeren:"
+
+#: ../contents/ui/config/ConfigActions.qml
+msgid "Mouse Wheel"
+msgstr "Muiswiel"
+
+#: ../contents/ui/config/ConfigActions.qml
+msgid "Scroll Up:"
+msgstr "Omhoog scrollen:"
+
+#: ../contents/ui/config/ConfigActions.qml
+msgid "Scroll Down:"
+msgstr "Omlaag scrollen:"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Font"
+msgstr "Lettertype"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Font Family:"
+msgstr "Lettertype:"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Font Size:"
+msgstr "Tekstgrootte:"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "px"
+msgstr "px"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Colors"
+msgstr "Kleuren"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Text:"
+msgstr "Tekst:"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Outline:"
+msgstr "Contour:"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Misc"
+msgstr "Overig"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Desktop Widget:"
+msgstr "Bureaubladwidget:"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Show background"
+msgstr "Achtergrond tonen"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Fixed Width:"
+msgstr "Vaste breedte:"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Fixed Height:"
+msgstr "Vaste hoogte:"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Replace all newlines with spaces"
+msgstr "Alle witregels vervangen door spaties"
+
+#: ../contents/ui/config/ConfigCommand.qml
+msgid "Run every "
+msgstr "Uitvoeren, elke "
+
+#: ../contents/ui/config/ConfigCommand.qml
+msgid "ms"
+msgstr "ms"
+
+#: ../contents/ui/config/ConfigCommand.qml
+msgid "Wait for completion"
+msgstr "Wachten tot opdracht is afgerond"
+
+#: ../contents/ui/config/ConfigCommand.qml
+msgid "Enabled"
+msgstr "Ingeschakeld"
+
+#: ../contents/ui/libconfig/FontFamily.qml
+msgctxt "Use default font"
+msgid "Default"
+msgstr "Standaard"
+
+#~ msgid "<b>Version:</b> %1"
+#~ msgstr "<b>Versie:</b> %1"
+
+#~ msgid "Desktop Widget: Show background"
+#~ msgstr "Bureaubladwidget: achtergrond tonen"
+
+#~ msgid "General"
+#~ msgstr "Algemeen"

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=kdewaita
+X-KDE-PluginInfo-Author=zayronxio
+X-KDE-PluginInfo-Email=adolfo@librepixels.com
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PluginInfo-License=GPL3.0
+X-KDE-PluginInfo-Name=kdewaita
+X-KDE-PluginInfo-Version=1.6.0
+X-KDE-PluginInfo-Website=https://store.kde.org/p/2023421/
+
+[BlurBehindEffect]
+enabled=true
+
