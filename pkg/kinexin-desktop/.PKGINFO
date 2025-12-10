@@ -3,12 +3,12 @@
 pkgname = kinexin-desktop
 pkgbase = kinexin-desktop
 xdata = pkgtype=pkg
-pkgver = 1.0.1.r-1
+pkgver = 1.0.2.r-1
 pkgdesc = Linexin KDE Plasma Desktop Full Experience
 url = https://github.com/Petexy
-builddate = 1765322749
+builddate = 1765328440
 packager = Unknown Packager
-size = 215586553
+size = 213113621
 arch = x86_64
 license = GPL-3.0
 depend = qt6-base
