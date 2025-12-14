@@ -8,11 +8,6 @@ post_install()
 	sudo systemctl disable lightdm 2>/dev/null || true
   	sudo systemctl enable sddm
 
-  	REAL_USER="${SUDO_USER:-$USER}"
-
-	if [ "$REAL_USER" != "root" ]; then
-		sudo -u "$REAL_USER" paru -S --noconfirm --sudo run0 --rebuild kwin-effects-forceblur kwin-effect-rounded-corners-git
-	fi
 }
 
 post_upgrade()
