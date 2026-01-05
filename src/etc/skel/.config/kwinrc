@@ -32,7 +32,7 @@ MoveResize=100
 
 [Plugins]
 blurEnabled=false
-forceblurEnabled=true
+glassEnabled=true
 macsimize6Enabled=true
 
 [Round-Corners]
