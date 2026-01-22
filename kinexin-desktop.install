@@ -4,10 +4,10 @@ post_install()
 	HOME=/home/$DESKTOP_USER
 	sudo cp -rf /etc/skel/.* $HOME
 	sudo chown $DESKTOP_USER $HOME/.config -R
+	sudo chown $DESKTOP_USER $HOME/.local/share/konsole -R
 	sudo systemctl disable gdm 2>/dev/null || true
 	sudo systemctl disable lightdm 2>/dev/null || true
   	sudo systemctl enable sddm
-
 }
 
 
