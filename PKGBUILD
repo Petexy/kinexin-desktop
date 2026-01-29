@@ -1,7 +1,7 @@
 # Maintainer: Petexy <https://github.com/Petexy>
 
 pkgname=kinexin-desktop
-pkgver=1.2.4.r
+pkgver=1.2.5.r
 pkgrel=1
 _currentdate=$(date +"%Y-%m-%d%H-%M-%S")
 pkgdesc='Linexin KDE Plasma Desktop Full Experience'
@@ -9,6 +9,7 @@ url='https://github.com/Petexy'
 arch=(x86_64)
 license=('GPL-3.0')
 depends=(
+  power-profiles-daemon
   qt6-base
   qt5-base
   qt5-graphicaleffects
