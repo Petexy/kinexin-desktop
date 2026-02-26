@@ -10,4 +10,21 @@ post_install()
   	sudo systemctl enable sddm
 }
 
+post_upgrade()
+{
+    DESKTOP_USER=$(getent passwd | awk -F: '$3 >= 1000 && $3 < 65534 {print $1}' | head -n1)
+    USER_HOME=$(getent passwd "$DESKTOP_USER" | cut -d: -f6)
 
+    TARGET_DIR="$USER_HOME/.local/share/plasma/plasmoids/org.kde.windowtitle/contents/ui"
+    TARGET_FILE="$TARGET_DIR/main.qml"
+
+    if [ ! -f "$TARGET_FILE" ]; then
+        echo "Notice: File '$TARGET_FILE' not found. Skipping AppMenuPrivate removal."
+        return 0
+    fi
+
+    sed -i '/import org\.kde\.plasma\.private\.appmenu 1\.0 as AppMenuPrivate/d' "$TARGET_FILE"
+    chown "$DESKTOP_USER:$DESKTOP_USER" "$TARGET_FILE"
+
+    echo "Successfully removed the AppMenuPrivate import from $TARGET_FILE."
+}
