@@ -2,7 +2,7 @@
 
 pkgname=kinexin-desktop
 pkgver=1.2.6.r
-pkgrel=2
+pkgrel=3
 _currentdate=$(date +"%Y-%m-%d%H-%M-%S")
 pkgdesc='Linexin KDE Plasma Desktop Full Experience'
 url='https://github.com/Petexy'
@@ -27,6 +27,7 @@ depends=(
   vlc
   plasma-meta
   dolphin
+  dolphin-plugins
   konsole
   kvantum
   ark
