@@ -1,1 +1,133 @@
-@import 'colors.css';
+/* Kinexin – GNOME GTK3 Theme
+ *
+ * Matches the Kinexin KWin decoration:
+ *   • Dark headerbar (#31313A)
+ *   • Colored circle window buttons (no icon glyphs)
+ *   • Close #E64D4D · Maximize #5973BF · Minimize #4DA64D
+ *   • 12 px window corner radius
+ *
+ * Inherits Adwaita-dark for all non-headerbar widgets.
+ */
+
+@import url("resource:///org/gtk/libgtk/theme/Adwaita/gtk-contained-dark.css");
+
+/* ===================================================================
+   Window chrome
+   =================================================================== */
+
+window.csd,
+window.csd decoration {
+    border-radius: 12px;
+}
+
+/* Headerbar: inherit Adwaita-dark defaults.
+ * Only window-control buttons are themed to match Kinexin. */
+
+/* ===================================================================
+   Title-bar buttons – solid colored circles (no icon)
+   =================================================================== */
+
+headerbar button.titlebutton,
+.titlebar button.titlebutton {
+    min-width: 20px;
+    min-height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+    padding: 0;
+    margin: 0 2px;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: radial-gradient(circle 8px at center, #808080 98%, transparent 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Hide only the icon image so button internals keep normal behavior. */
+headerbar button.titlebutton image,
+.titlebar button.titlebutton image {
+    -gtk-icon-size: 0;
+    color: transparent;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+}
+
+/* ── Close ───────────────────────────────────────────────────────── */
+
+headerbar button.titlebutton.close,
+.titlebar button.titlebutton.close {
+    background-color: transparent;
+    background-image: radial-gradient(circle 8px at center, #E64D4D 98%, transparent 100%);
+}
+
+headerbar button.titlebutton.close:hover,
+.titlebar button.titlebutton.close:hover {
+    background-color: transparent;
+    background-image: radial-gradient(circle 8px at center, #FF5C5C 98%, transparent 100%);
+}
+
+headerbar button.titlebutton.close:active,
+.titlebar button.titlebutton.close:active {
+    background-color: transparent;
+    background-image: radial-gradient(circle 8px at center, #A13636 98%, transparent 100%);
+}
+
+headerbar button.titlebutton.close:backdrop,
+.titlebar button.titlebutton.close:backdrop {
+    background-color: transparent;
+    background-image: radial-gradient(circle 8px at center, #E64D4D 98%, transparent 100%);
+}
+
+/* ── Maximize ────────────────────────────────────────────────────── */
+
+headerbar button.titlebutton.maximize,
+.titlebar button.titlebutton.maximize {
+    background-color: transparent;
+    background-image: radial-gradient(circle 8px at center, #5973BF 98%, transparent 100%);
+}
+
+headerbar button.titlebutton.maximize:hover,
+.titlebar button.titlebutton.maximize:hover {
+    background-color: transparent;
+    background-image: radial-gradient(circle 8px at center, #6B8AE5 98%, transparent 100%);
+}
+
+headerbar button.titlebutton.maximize:active,
+.titlebar button.titlebutton.maximize:active {
+    background-color: transparent;
+    background-image: radial-gradient(circle 8px at center, #3E5186 98%, transparent 100%);
+}
+
+headerbar button.titlebutton.maximize:backdrop,
+.titlebar button.titlebutton.maximize:backdrop {
+    background-color: transparent;
+    background-image: radial-gradient(circle 8px at center, #5973BF 98%, transparent 100%);
+}
+
+/* ── Minimize ────────────────────────────────────────────────────── */
+
+headerbar button.titlebutton.minimize,
+.titlebar button.titlebutton.minimize {
+    background-color: transparent;
+    background-image: radial-gradient(circle 8px at center, #4DA64D 98%, transparent 100%);
+}
+
+headerbar button.titlebutton.minimize:hover,
+.titlebar button.titlebutton.minimize:hover {
+    background-color: transparent;
+    background-image: radial-gradient(circle 8px at center, #5CC75C 98%, transparent 100%);
+}
+
+headerbar button.titlebutton.minimize:active,
+.titlebar button.titlebutton.minimize:active {
+    background-color: transparent;
+    background-image: radial-gradient(circle 8px at center, #367436 98%, transparent 100%);
+}
+
+headerbar button.titlebutton.minimize:backdrop,
+.titlebar button.titlebutton.minimize:backdrop {
+    background-color: transparent;
+    background-image: radial-gradient(circle 8px at center, #4DA64D 98%, transparent 100%);
+}
