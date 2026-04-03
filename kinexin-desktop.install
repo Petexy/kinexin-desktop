@@ -1,3 +1,28 @@
+rebuild_kwin_effects()
+{
+	# Rebuild kwin effects from source.
+	# These must be compiled against the currently installed kwin headers,
+	# so we clone and build from upstream GitHub rather than relying on AUR.
+
+	echo "Rebuilding kwin-effects-glass from source..."
+	rm -rf /tmp/_kwin_glass_build
+	git clone --depth 1 https://github.com/4v3ngR/kwin-effects-glass /tmp/_kwin_glass_build \
+		&& cmake -B /tmp/_kwin_glass_build/build -S /tmp/_kwin_glass_build -DCMAKE_INSTALL_PREFIX=/usr \
+		&& cmake --build /tmp/_kwin_glass_build/build \
+		&& cmake --install /tmp/_kwin_glass_build/build \
+		|| echo "Warning: kwin-effects-glass rebuild failed." >&2
+	rm -rf /tmp/_kwin_glass_build
+
+	echo "Rebuilding KDE-Rounded-Corners from source..."
+	rm -rf /tmp/_kwin_rounded_build
+	git clone --depth 1 https://github.com/matinlotfali/KDE-Rounded-Corners /tmp/_kwin_rounded_build \
+		&& cmake -B /tmp/_kwin_rounded_build/build -S /tmp/_kwin_rounded_build -DCMAKE_INSTALL_PREFIX=/usr \
+		&& cmake --build /tmp/_kwin_rounded_build/build \
+		&& cmake --install /tmp/_kwin_rounded_build/build \
+		|| echo "Warning: KDE-Rounded-Corners rebuild failed." >&2
+	rm -rf /tmp/_kwin_rounded_build
+}
+
 post_install()
 {
 	DESKTOP_USER=$(getent passwd | awk -F: '$3 >= 1000 && $3 < 65534 {print $1}' | head -n1)
@@ -8,6 +33,7 @@ post_install()
 	sudo systemctl disable gdm 2>/dev/null || true
 	sudo systemctl disable lightdm 2>/dev/null || true
   	sudo systemctl enable sddm
+	rebuild_kwin_effects
 }
 
 post_upgrade()

@@ -1,8 +1,8 @@
 # Maintainer: Petexy <https://github.com/Petexy>
 
 pkgname=kinexin-desktop
-pkgver=1.2.6.r
-pkgrel=3
+pkgver=1.2.7.r
+pkgrel=1
 _currentdate=$(date +"%Y-%m-%d%H-%M-%S")
 pkgdesc='Linexin KDE Plasma Desktop Full Experience'
 url='https://github.com/Petexy'
@@ -37,6 +37,10 @@ depends=(
   ffmpegthumbs
   kwin-effect-rounded-corners-git
   kwin-effects-glass-git
+  cmake
+  git
+  gcc
+  extra-cmake-modules
 )
 makedepends=(
 )
