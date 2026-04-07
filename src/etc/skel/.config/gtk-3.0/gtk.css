@@ -1,38 +1,81 @@
-/* Kinexin – GNOME GTK3 Theme
+/* Kinexin GTK 3.0 Style
  *
- * Matches the Kinexin KWin decoration:
- *   • Dark headerbar (#31313A)
- *   • Colored circle window buttons (no icon glyphs)
- *   • Close #E64D4D · Maximize #5973BF · Minimize #4DA64D
- *   • 12 px window corner radius
+ * Transparent sidebar + Kinexin window control buttons.
+ * Place at ~/.config/gtk-3.0/gtk.css
  *
- * Inherits Adwaita-dark for all non-headerbar widgets.
- */
+ * Use blur my shell extension to add blur effect behind the transparent part of windows
+*/
 
-@import url("resource:///org/gtk/libgtk/theme/Adwaita/gtk-contained-dark.css");
+headerbar,
+headerbar.titlebar,
+.titlebar {
+  background-color: rgba(0, 0, 0, 0.35);
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* Remove solid backdrop */
+headerbar:backdrop,
+.titlebar:backdrop {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* Transparent Sidebar */
+.sidebar-pane,
+.sidebar,
+.navigation-sidebar {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* Lollypop */
+window>deck>grid>headerbar.titlebar>widget>widget>box>image {
+  margin-top: -1px;
+}
+
+window>deck>grid>headerbar.titlebar>box> :nth-child(1) {
+  margin-right: -40px;
+  opacity: 0;
+}
+
+window>deck>grid>headerbar.titlebar>box> :nth-child(2) {
+  margin-right: 27px;
+}
+
+window>deck>grid>headerbar.titlebar>box>.close {
+  margin-right: 0;
+}
+
+/* Rhythmbox */
+window box:nth-child(2) paned:nth-child(3) paned:nth-child(3) box:nth-child(2) {
+  background: @theme_bg_color;
+}
+
+window box:nth-child(2) paned:nth-child(3) box:first-child paned grid .sidebar-toolbar,
+window box:nth-child(2) paned:nth-child(3) box:first-child paned grid .sidebar-toolbar button {
+  background: transparent;
+}
+
+window box toolbar {
+  background: transparent;
+}
 
 /* ===================================================================
    Window chrome
    =================================================================== */
 
-window.csd,
 window.csd decoration {
     border-radius: 12px;
 }
 
-/* Headerbar: inherit Adwaita-dark defaults.
- * Only window-control buttons are themed to match Kinexin. */
-
 /* ===================================================================
-   Title-bar buttons – solid colored circles (no icon)
+   Window-control buttons – solid colored circles (no icon)
    =================================================================== */
 
 headerbar button.titlebutton,
 .titlebar button.titlebutton {
     min-width: 20px;
     min-height: 20px;
-    max-width: 20px;
-    max-height: 20px;
     padding: 0;
     margin: 0 2px;
     border: none;
@@ -42,11 +85,12 @@ headerbar button.titlebutton,
     background-image: radial-gradient(circle 8px at center, #808080 98%, transparent 100%);
     background-repeat: no-repeat;
     background-position: center;
+    -GtkWidget-focus-padding: 0;
+    -GtkWidget-focus-line-width: 0;
 }
 
-/* Hide only the icon image so button internals keep normal behavior. */
-headerbar button.titlebutton image,
-.titlebar button.titlebutton image {
+headerbar button.titlebutton > image,
+.titlebar button.titlebutton > image {
     -gtk-icon-size: 0;
     color: transparent;
     opacity: 0;
