@@ -1,8 +1,8 @@
 # Maintainer: Petexy <https://github.com/Petexy>
 
 pkgname=kinexin-desktop
-pkgver=1.3.0.r
-pkgrel=2
+pkgver=1.3.1.r
+pkgrel=1
 pkgdesc='Linexin KDE Plasma Desktop Full Experience'
 url='https://github.com/Petexy'
 arch=('x86_64')
@@ -54,5 +54,13 @@ package() {
         else
             install -Dm644 "${_file}" "${pkgdir}/${_dest}"
         fi
+    done
+
+    find . -mindepth 1 -type l | while IFS= read -r _link; do
+        local _dest="${_link#./}"
+        local _target
+        _target="$(readlink "${_link}")"
+        install -dm755 "${pkgdir}/$(dirname "${_dest}")"
+        ln -sf "${_target}" "${pkgdir}/${_dest}"
     done
 }
