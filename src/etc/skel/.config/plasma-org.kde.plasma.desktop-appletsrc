@@ -35,22 +35,17 @@ location=4
 plugin=org.kde.panel
 wallpaperplugin=org.kde.image
 
-[Containments][73][Applets][126]
+[Containments][73][Applets][247]
 immutability=1
-plugin=org.kde.plasma.kickerdash
+plugin=org.linexin.launcher
 
-[Containments][73][Applets][126][Configuration]
-popupHeight=400
-popupWidth=560
+[Containments][73][Applets][247][Configuration]
+popupHeight=649
+popupWidth=574
 
-[Containments][73][Applets][126][Configuration][ConfigDialog]
+[Containments][73][Applets][247][Configuration][ConfigDialog]
 DialogHeight=540
 DialogWidth=720
-
-[Containments][73][Applets][126][Configuration][General]
-customButtonImage=windowshuffler-symbolic
-favoritesPortedToKAstats=true
-useCustomButtonImage=true
 
 [Containments][73][Applets][74]
 immutability=1
@@ -60,7 +55,7 @@ plugin=org.kde.plasma.icontasks
 launchers=applications:app.zen_browser.zen.desktop,preferred://filemanager,applications:org.kde.discover.desktop,applications:github.petexy.linexincenter.desktop,applications:steam.desktop
 
 [Containments][73][General]
-AppletOrder=126;74
+AppletOrder=247;74
 
 [Containments][76]
 activityId=
