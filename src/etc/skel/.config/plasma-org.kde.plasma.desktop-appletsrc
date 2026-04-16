@@ -47,6 +47,11 @@ popupWidth=574
 DialogHeight=540
 DialogWidth=720
 
+[Containments][73][Applets][251][Configuration][General]
+customButtonImage=windowshuffler-symbolic
+dashboardApps=[{"desktopFile":"applications:github.petexy.linexincenter.desktop","name":"Linexin Center","icon":"/usr/share/icons/github.petexy.linexincenter.svg"}]
+useCustomButtonImage=true
+
 [Containments][73][Applets][74]
 immutability=1
 plugin=org.kde.plasma.icontasks
