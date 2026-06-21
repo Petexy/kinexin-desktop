@@ -1,0 +1,10 @@
+[Unit]
+Description=Rebuild kwin effects (glass, rounded-corners) against the current kwin
+Documentation=https://github.com/Petexy
+# Run outside pacman's network sandbox, so this is where the github clone works.
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/plasma-desktop-postupdate.sh

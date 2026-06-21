@@ -1,14 +1,12 @@
 [Trigger]
+Operation = Install
 Operation = Upgrade
 Type = Package
 Target = plasma-desktop
-
-[Trigger]
-Operation = Upgrade
-Type = Package
 Target = kwin
+Target = kinexin-desktop
 
 [Action]
-Description = Running Kinexin script after plasma-desktop/kwin update...
+Description = Triggering kwin effects rebuild (glass, rounded-corners)...
 When = PostTransaction
-Exec = /usr/bin/plasma-desktop-postupdate.sh
+Exec = /usr/bin/systemctl start --no-block kinexin-kwin-effects-rebuild.service
