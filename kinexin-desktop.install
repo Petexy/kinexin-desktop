@@ -1,8 +1,19 @@
 
+# Rebuild the kwin effects via the systemd service, which runs OUTSIDE pacman's
+# network sandbox (where the github clone would fail). This BLOCKS until the
+# build finishes on purpose: kinexin-desktop ships in the system installer, and
+# the installer must not report "finished" -- or let the user reboot -- while the
+# effects are still being built.
 trigger_kwin_effects_rebuild()
 {
-	systemctl daemon-reload 2>/dev/null || true
-	systemctl start --no-block kinexin-kwin-effects-rebuild.service 2>/dev/null || true
+	if [ -d /run/systemd/system ]; then
+		systemctl daemon-reload 2>/dev/null || true
+		# No --no-block: wait for the rebuild to complete.
+		systemctl start kinexin-kwin-effects-rebuild.service 2>/dev/null || true
+	else
+		# No running systemd (e.g. installing in a plain chroot): build in-line.
+		/usr/bin/plasma-desktop-postupdate.sh || true
+	fi
 }
 
 post_install()
@@ -26,7 +37,8 @@ post_upgrade()
     TARGET_DIR="$USER_HOME/.local/share/plasma/plasmoids/org.kde.windowtitle/contents/ui"
     TARGET_FILE="$TARGET_DIR/main.qml"
 
-    trigger_kwin_effects_rebuild
+    # No rebuild here: upgrades are handled by plasma-desktop-update.hook, which
+    # fires once per transaction. Triggering here too would build twice.
 
     if [ ! -f "$TARGET_FILE" ]; then
         echo "Notice: File '$TARGET_FILE' not found. Skipping AppMenuPrivate removal."

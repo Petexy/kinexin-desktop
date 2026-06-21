@@ -1,7 +1,7 @@
 # Maintainer: Petexy <https://github.com/Petexy>
 
 pkgname=kinexin-desktop
-pkgver=1.4.5.r
+pkgver=1.4.6.r
 pkgrel=1
 pkgdesc='Linexin KDE Plasma Desktop Full Experience'
 url='https://github.com/Petexy'
@@ -40,7 +40,7 @@ depends=(
   'git'
   'gcc'
   'extra-cmake-modules'
-  'power-profiles-daemon'
+  'vulkan-headers'
 )
 install="${pkgname}.install"
 options=('!strip' '!debug')

@@ -1,6 +1,14 @@
 #!/bin/bash
 
-# Rebuild kwin effects from source so they match the updated kwin headers.
+# Single source of truth for (re)building the kwin effects from source against
+# the currently installed kwin. kinexin-desktop OWNS these effects, so this runs
+# UNCONDITIONALLY -- it installs/builds them even if they are not yet present --
+# on every kinexin-desktop install/update and on every kwin/plasma update.
+#
+# Run by kinexin-kwin-effects-rebuild.service, started from
+# plasma-desktop-update.hook and kinexin-desktop.install. linexin-updater starts
+# this same service too, but only when kinexin-desktop is installed.
+
 echo "Rebuilding kwin-effects-glass from source..."
 rm -rf /tmp/_kwin_glass_build
 git clone --depth 1 https://github.com/4v3ngR/kwin-effects-glass /tmp/_kwin_glass_build \

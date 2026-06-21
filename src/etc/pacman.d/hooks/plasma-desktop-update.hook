@@ -9,4 +9,6 @@ Target = kinexin-desktop
 [Action]
 Description = Triggering kwin effects rebuild (glass, rounded-corners)...
 When = PostTransaction
-Exec = /usr/bin/systemctl start --no-block kinexin-kwin-effects-rebuild.service
+# No --no-block on purpose: pacman waits for the rebuild to finish, so nothing
+# (the system installer, a reboot) proceeds while effects are still being built.
+Exec = /usr/bin/systemctl start kinexin-kwin-effects-rebuild.service

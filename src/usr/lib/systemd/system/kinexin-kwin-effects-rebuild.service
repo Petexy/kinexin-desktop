@@ -1,9 +1,10 @@
 [Unit]
 Description=Rebuild kwin effects (glass, rounded-corners) against the current kwin
 Documentation=https://github.com/Petexy
-# Run outside pacman's network sandbox, so this is where the github clone works.
-After=network-online.target
-Wants=network-online.target
+# Started synchronously from pacman scriptlets/hook (network already up), never
+# enabled at boot, so no network-online.target ordering -- it would only risk
+# making the blocking start wait. This unit runs outside pacman's network
+# sandbox, which is what lets the github clone succeed.
 
 [Service]
 Type=oneshot
