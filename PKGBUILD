@@ -1,7 +1,7 @@
 # Maintainer: Petexy <https://github.com/Petexy>
 
 pkgname=kinexin-desktop
-pkgver=1.4.6.r
+pkgver=1.5.0.r
 pkgrel=1
 pkgdesc='Linexin KDE Plasma Desktop Full Experience'
 url='https://github.com/Petexy'
