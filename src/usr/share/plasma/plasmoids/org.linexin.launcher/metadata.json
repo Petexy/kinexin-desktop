@@ -12,11 +12,11 @@
         "FormFactors": [
             "desktop"
         ],
-        "Icon": "start-here-kde",
+        "Icon": "linexin-launcher",
         "Id": "org.linexin.launcher",
         "License": "GPL-3.0+",
         "Name": "Linexin Launcher",
-        "Version": "1.1.0",
+        "Version": "1.2.0",
         "Website": "https://github.com/petexy/kinexin-launcher"
     },
     "X-Plasma-API-Minimum-Version": "6.0",

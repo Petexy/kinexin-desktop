@@ -21,6 +21,9 @@ Item {
     enabled: !model.disabled
 
     property bool showLabel: true
+    // Set by the grid when this tile is an A-Z group rather than an app.
+    property bool groupLabel: false
+    property real labelFontScale: 1.0
     property bool animatedEntrance: false
     property bool entranceTriggered: false
 
@@ -41,7 +44,17 @@ Item {
 
     // Start invisible if animated entrance is enabled
     opacity: (animatedEntrance && root.iconEntranceDuration > 0) ? 0 : 1
-    scale: (animatedEntrance && root.iconEntranceDuration > 0) ? 0.7 : 1.0
+    scale: (animatedEntrance && root.iconEntranceDuration > 0) ? 1.22 : 1.0
+
+    // Diagonal wave delay for this item's entrance. A flat index * step ramp
+    // walks the grid one icon at a time, so the last icon of a 40-slot page
+    // waited out the whole cap before it even began; row + col makes the
+    // leading diagonal move together. Timing lives in root.entranceDelay().
+    function entranceDelay() {
+        var view = GridView.view;
+        var cols = (view && view.cellWidth > 0) ? Math.max(1, Math.floor(view.width / view.cellWidth)) : 1;
+        return root.entranceDelay(Math.floor(itemIndex / cols), itemIndex % cols);
+    }
 
     Component.onCompleted: {
         if (animatedEntrance && entranceTriggered) {
@@ -56,14 +69,14 @@ Item {
     onEntranceTriggeredChanged: {
         if (!animatedEntrance || root.iconEntranceDuration <= 0) return;
         if (entranceTriggered) {
-            entranceTimer.interval = Math.min(itemIndex * 12, 400);
+            entranceTimer.interval = entranceDelay();
             entranceTimer.start();
         } else {
             // Reset to hidden state so the next entrance animates properly
             entranceAnim.stop();
             entranceTimer.stop();
             opacity = 0;
-            scale = 0.7;
+            scale = 1.22;
         }
     }
 
@@ -82,16 +95,22 @@ Item {
             target: item
             property: "opacity"
             from: 0; to: 1
-            duration: root.iconEntranceDuration * 0.875
+            duration: Math.round(root.iconEntranceDuration * 0.5)
             easing.type: Easing.OutCubic
         }
+        // Settles down from oversized, matching the board's zoom-out. Growing
+        // from 0.7 with an OutBack overshoot meant every icon crossed 1.0 from
+        // below and bounced back — 40 of those firing on a ramp is the "boiling
+        // grid" that read as unfluid. Coming down from 1.22 the icon dips a
+        // couple of percent under 1.0 near the end and settles, which keeps the
+        // springy character without the collective bounce.
         NumberAnimation {
             target: item
             property: "scale"
-            from: 0.7; to: 1.0
-            duration: root.iconEntranceDuration
-            easing.type: Easing.OutBack
-            easing.overshoot: 1.2
+            from: 1.22; to: 1.0
+            duration: Math.round(root.iconEntranceDuration * 0.75)
+            easing.type: Easing.Bezier
+            easing.bezierCurve: [0.12, 0.8, 0.24, 1.04, 1.0, 1.0]
         }
     }
 
@@ -126,6 +145,11 @@ Item {
         Kirigami.Icon {
             id: iconItem
 
+            // A-Z group rows carry no icon of their own, so the tile would be a
+            // blank square with a caption under it. Drop the icon there and let
+            // the letter have the whole cell.
+            visible: !item.groupLabel || String(model.decoration) !== ""
+
             y: item.showLabel ? (2 * highlightItemSvg.margins.top) : null
 
             anchors.horizontalCenter: parent.horizontalCenter
@@ -156,8 +180,9 @@ Item {
             visible: item.showLabel
 
             anchors {
-                top: iconItem.bottom
+                top: iconItem.visible ? iconItem.bottom : undefined
                 topMargin: Kirigami.Units.smallSpacing
+                verticalCenter: iconItem.visible ? undefined : parent.verticalCenter
                 left: parent.left
                 leftMargin: highlightItemSvg.margins.left
                 right: parent.right
@@ -168,13 +193,17 @@ Item {
             maximumLineCount: 2
             elide: Text.ElideMiddle
             wrapMode: Text.Wrap
-            font.pointSize: Kirigami.Theme.defaultFont.pointSize + 0.5
+            font.pointSize: root.scaledFont(item.groupLabel
+                ? Kirigami.Theme.defaultFont.pointSize + 14
+                : Kirigami.Theme.defaultFont.pointSize + 0.5, item.labelFontScale)
+            font.weight: item.groupLabel ? Font.Bold : Font.Normal
 
             text: ("name" in model ? model.name : model.display)
             textFormat: Text.PlainText
 
-            // Fade in label smoothly
-            opacity: item.opacity
+            // Fade in label smoothly. Group letters are held back a little so
+            // they read as signposts rather than competing with the app tiles.
+            opacity: item.groupLabel ? item.opacity * 0.85 : item.opacity
         }
     }
 
@@ -203,7 +232,7 @@ Item {
 
             if ("trigger" in GridView.view.model) {
                 GridView.view.model.trigger(index, "", null);
-                root.closeWithAnimation();
+                root.launchZoomFromItem(item);
             }
 
             itemGrid.itemActivated(index, "", null);
